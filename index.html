@@ -9,52 +9,210 @@
 <body>
 
     <div class="container">
-        <div class="notification-toast">
-            <div class="toast-content">
-                <div class="toast-avatar">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff4d4d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <!-- Smooth Live Toast Notifications Container -->
+        <div class="notification-container">
+            <div class="notification-toast id="liveToast">
+                <div class="toast-content">
+                    <div class="toast-avatar">
+                        <!-- Custom logo replacing old tick mark -->
+                        <img src="image_07594a.png" alt="Logo" class="logo-img-mini" onerror="this.style.display='none';">
+                    </div>
+                    <div class="toast-text">
+                        <h4 id="toastUser">Marcus T. earned +$22.00</h4>
+                        <p id="toastAction">Testing a new app</p>
+                    </div>
                 </div>
-                <div class="toast-text">
-                    <h4>Marcus T. earned +$22.00</h4>
-                    <p>Testing a new app</p>
-                </div>
-            </div>
-            <div class="toast-time">just now</div>
-        </div>
-
-        <div class="logo-container">
-            <div class="main-logo">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff4d4d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div class="toast-time">just now</div>
             </div>
         </div>
 
-        <h1>Start Earning <span>Real Money</span></h1>
-        
-        <p class="description">
-            Download TesterUp and get paid to test apps and complete simple offers from your phone.
-        </p>
+        <!-- SCREEN 1: Age Verification Gate Layout -->
+        <div id="gateScreen" class="view-panel active">
+            <div class="logo-container">
+                <div class="main-logo animate-glow">
+                    <img src="image_07594a.png" alt="Main Logo" class="logo-img-main">
+                </div>
+            </div>
 
-        <div class="badge-row">
-            <div class="badge">📱 Download App</div>
-            <div class="badge">🎮 Complete Offers</div>
-            <div class="badge">💰 Cash Out</div>
+            <h1>Start Earning <span>Real Money</span></h1>
+            
+            <p class="description">
+                Download TesterUp and get paid to test apps and complete simple offers from your phone.
+            </p>
+
+            <div class="badge-row">
+                <div class="badge">📱 Download App</div>
+                <div class="badge">🎮 Complete Offers</div>
+                <div class="badge">💰 Cash Out</div>
+            </div>
+
+            <!-- Triggers inline change to Screen 2 -->
+            <button class="btn btn-primary" onclick="showOfferScreen()">
+                I'm over 21
+                <span class="btn-subtext">Full Access: All Offers, Games & Instant Payouts</span>
+            </button>
+
+            <!-- Directly opens external affiliate link -->
+            <button class="btn btn-secondary" onclick="window.location.href='https://giftclick.org/aff_c?offer_id=2691&aff_id=148566';">
+                I'm under 21
+                <span class="btn-subtext">Limited Access: Wire Transfer Only</span>
+            </button>
+
+            <div class="live-counter">
+                <div class="pulse-dot"></div>
+                <span><strong>8,436</strong> people earning right now</span>
+            </div>
         </div>
 
-        <button class="btn btn-primary" onclick="window.location.href='https://www.testerup.com/';">
-            I'm over 21
-            <span class="btn-subtext">Full Access: All Offers, Games & Instant Payouts</span>
-        </button>
 
-        <button class="btn btn-secondary" onclick="window.location.href='https://giftclick.org/aff_c?offer_id=2691&aff_id=148566';">
-            I'm under 21
-            <span class="btn-subtext">Limited Access: Wire Transfer Only</span>
-        </button>
+        <!-- SCREEN 2: "You're In!" Offer Details Screen (image_075d29.jpg / image_075d2e.jpg) -->
+        <div id="offerScreen" class="view-panel">
+            <div class="header-timer">
+                ⏰ Offer expires in <span id="countdown">14:26</span>
+            </div>
 
-        <div class="live-counter">
-            <div class="pulse-dot"></div>
-            <span><strong>8,436</strong> people earning right now</span>
+            <div class="logo-container" style="margin-top: 15px;">
+                <div class="main-logo animate-glow">
+                    <img src="image_07594a.png" alt="Main Logo" class="logo-img-main">
+                </div>
+            </div>
+
+            <div class="success-circle">
+                <img src="image_07594a.png" alt="Logo Icon" class="logo-img-mini">
+            </div>
+
+            <h2 class="headline-success">You're In!</h2>
+            
+            <p class="description">
+                Your app is ready. Download <strong>TesterUp</strong> now and start earning money by testing apps and completing offers instantly.
+            </p>
+
+            <button class="btn btn-primary btn-large" onclick="window.location.href='https://www.testerup.com/';">
+                📱 DOWNLOAD THE APP NOW
+            </button>
+
+            <div class="rating-row">
+                <span class="stars">⭐⭐⭐⭐⭐</span> 4.3 • 500,000+ active earners
+            </div>
+
+            <!-- Stats Grid Breakdown -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>$10M+</h3>
+                    <p>PAID OUT</p>
+                </div>
+                <div class="stat-card">
+                    <h3>500K+</h3>
+                    <p>USERS</p>
+                </div>
+                <div class="stat-card">
+                    <h3>4.3★</h3>
+                    <p>RATING</p>
+                </div>
+            </div>
+
+            <!-- Instructional Flow Breakdown -->
+            <div class="how-it-works">
+                <h3>HOW IT WORKS</h3>
+                
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-info">
+                        <h4>Download TesterUp App</h4>
+                        <p>iOS & Android — takes less than 60 seconds</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-info">
+                        <h4>Test Apps & Complete Offers</h4>
+                        <p>Each offer shows exactly what you earn upfront</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-info">
+                        <h4>Get Paid Fast</h4>
+                        <p>Withdraw via PayPal, gift cards & more — most payouts in 24hrs</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Warning Callout Box -->
+            <div class="warning-box">
+                <div class="warning-badge">⚠️ IMPORTANT</div>
+                <h4>🔒 Complete Offers All the Way Through</h4>
+                <p>Partial completions don't pay out. Follow each offer's steps exactly as shown — your balance updates automatically once complete.</p>
+            </div>
+
+            <!-- Footer Trust Badges -->
+            <div class="badge-row" style="margin-top: 20px;">
+                <div class="badge">🔒 Secure</div>
+                <div class="badge">✓ No Fees</div>
+                <div class="badge">⚡ Instant Payouts</div>
+            </div>
+            <p class="trust-footer-text">Trusted by millions of users worldwide</p>
         </div>
     </div>
 
+    <!-- Notification Rotation Logic & View Controller -->
+    <script>
+        // Array containing the various vouch updates requested
+        const notifications = [
+            { user: "Marcus T. earned +$22.00", action: "Testing a new app" },
+            { user: "Chloe K. validated +$18.50", action: "Watching a video offer" },
+            { user: "Ben S. achieved +$31.20", action: "Completing surveys" },
+            { user: "Mia L. earned +$15.80", action: "Testing a new mobile game" },
+            { user: "David R. cashed out +$50.00", action: "via instant PayPal" }
+        ];
+
+        let currentIndex = 0;
+        const toastEl = document.getElementById('liveToast');
+        const userEl = document.getElementById('toastUser');
+        const actionEl = document.getElementById('toastAction');
+
+        function cycleNotifications() {
+            // Slide/Fade Out
+            toastEl.classList.remove('active');
+            
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % notifications.length;
+                userEl.textContent = notifications[currentIndex].user;
+                actionEl.textContent = notifications[currentIndex].action;
+                
+                // Slide/Fade In
+                toastEl.classList.add('active');
+            }, 600); // Syncs cleanly with the CSS transition length
+        }
+
+        // Initialize notification animations
+        document.addEventListener("DOMContentLoaded", () => {
+            toastEl.classList.add('active');
+            setInterval(cycleNotifications, 4000); // Cycles smoothly every 4 seconds
+            startCountdown();
+        });
+
+        // View changer function for Screen 2
+        function showOfferScreen() {
+            document.getElementById('gateScreen').classList.remove('active');
+            document.getElementById('offerScreen').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Fake 14:26 dynamic offer countdown timer countdown
+        function startCountdown() {
+            let time = 14 * 60 + 26;
+            const timerDisplay = document.getElementById('countdown');
+            setInterval(() => {
+                if (time <= 0) return;
+                time--;
+                let mins = Math.floor(time / 60);
+                let secs = time % 60;
+                timerDisplay.textContent = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
